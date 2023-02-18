@@ -9,11 +9,10 @@
     >
       {{ initials }}
     </div>
-    <img
+    <AtomsAvatar
       :src="chanel.img"
-      alt=""
       :aria-label="chanel.name"
-      class="pointer-events-none flex h-full w-full scale-105 items-center justify-center border-0 object-cover"
+      class="scale-105"
     />
   </MoleculesChanelNavigationBase>
 </template>

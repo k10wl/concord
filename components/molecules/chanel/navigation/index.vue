@@ -2,17 +2,19 @@
   <MoleculesChanelNavigationBase
     :to="`/chanels/${chanel.id}`"
     :selected="chanelRegexp.test($route.fullPath)"
+    class="relative"
   >
-    <img
-      v-if="chanel.img"
-      :src="chanel.img"
-      :alt="chanel.name"
-      :aria-label="chanel.name"
-      class="pointer-events-none h-full w-full object-cover"
-    />
-    <div v-else class="flex h-full w-full items-center justify-center">
+    <div
+      class="absolute inset-x-0 m-auto flex h-full w-full items-center justify-center"
+    >
       {{ initials }}
     </div>
+    <img
+      :src="chanel.img"
+      alt=""
+      :aria-label="chanel.name"
+      class="pointer-events-none flex h-full w-full scale-105 items-center justify-center border-0 object-cover"
+    />
   </MoleculesChanelNavigationBase>
 </template>
 

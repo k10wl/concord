@@ -1,3 +1,9 @@
 <template>
-  <NuxtLayout name="default" />
+  <NuxtLayout name="default">
+    <NuxtPage />
+  </NuxtLayout>
 </template>
+
+<script setup>
+useHead({ title: 'Concord' })
+</script>

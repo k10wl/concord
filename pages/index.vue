@@ -1,3 +1,3 @@
 <template>
-  <p>Chat</p>
+  <div>HELLO WORLD</div>
 </template>

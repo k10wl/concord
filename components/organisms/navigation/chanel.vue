@@ -15,13 +15,5 @@
 </template>
 
 <script setup lang="ts">
-import { Chanel } from '~~/types'
-
-const CHANELS_MOCK: Chanel[] = [
-  { id: '1', name: 'one!', img: 'https://picsum.photos/id/235/200/200' },
-  { id: '2', name: 'T Wo!', img: 'https://picsum.photos/id/234/200/200' },
-  { id: '3', name: 'thr33' },
-  { id: '4', name: 'f0uR!', img: 'https://picsum.photos/id/233/200/200' },
-  { id: '5', name: 'f1v3 5' },
-]
+import { CHANELS_MOCK } from '~~/constants'
 </script>

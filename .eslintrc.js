@@ -22,7 +22,12 @@ module.exports = {
   },
   plugins: ['vue', 'tailwindcss'],
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
     'vue/multi-word-component-names': 'off',
     'import/extensions': [
       'error',

@@ -1,7 +1,7 @@
 <template>
   <input
     :value="modelValue"
-    class="rounded-[2px] border-none bg-gray-900 px-2 py-1 text-[14px] outline-0 outline-offset-0"
+    class="rounded-sm border-none bg-gray-900 px-2 py-1 text-sm outline-0 outline-offset-0"
     @input="update"
   />
 </template>

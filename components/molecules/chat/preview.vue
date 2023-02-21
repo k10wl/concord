@@ -14,10 +14,7 @@
       <p class="flex-1 truncate">
         {{ chatName }}
       </p>
-      <div
-        v-if="isButtonShow"
-        class="flex h-[16px] w-[16px] shrink-0 items-center"
-      >
+      <div v-if="isButtonShow" class="flex h-4 w-4 shrink-0 items-center">
         <IconsClose />
       </div>
     </AtomsCard>

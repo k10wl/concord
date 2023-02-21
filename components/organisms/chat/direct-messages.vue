@@ -10,10 +10,7 @@
     </div>
     <ul>
       <li v-for="chat in CHAT_MOCK" :key="chat.id">
-        <MoleculesChatPreview
-          :to="`/chanels/${chat.chanelId}/${chat.id}`"
-          :chat="chat"
-        />
+        <MoleculesChatPreview :chat="chat" />
       </li>
     </ul>
   </div>

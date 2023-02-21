@@ -3,17 +3,14 @@
     <div
       class="flex items-center justify-between p-3 font-semibold text-gray-400 hover:text-gray-200"
     >
-      <h3 class="text-[12px] uppercase">Direct messages</h3>
-      <button type="button" class="flex h-[16px] w-[16px] items-center">
+      <h3 class="text-xs uppercase">Direct messages</h3>
+      <button type="button" class="flex h-4 w-4 items-center">
         <IconsAdd />
       </button>
     </div>
-    <ul>
+    <ul class="grid gap-1">
       <li v-for="chat in CHAT_MOCK" :key="chat.id">
-        <MoleculesChatPreview
-          :to="`/chanels/${chat.chanelId}/${chat.id}`"
-          :chat="chat"
-        />
+        <MoleculesChatPreview :chat="chat" />
       </li>
     </ul>
   </div>

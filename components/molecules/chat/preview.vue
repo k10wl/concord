@@ -1,27 +1,30 @@
 <template>
-  <NuxtLink>
-    <AtomsCard
-      @mouseover="isButtonShow = true"
-      @mouseleave="isButtonShow = false"
-      @focus="() => {}"
-      @blur="() => {}"
+  <div class="group relative rounded hover:bg-gray-600 hover:text-gray-200">
+    <NuxtLink
+      :to="`/chanels/${chat.chanelId}/${chat.id}`"
+      class="rounded"
+      active-class="bg-gray-700 flex"
     >
-      <AtomsAvatarInitials
-        :avatar="anotherMember?.avatar"
-        :name="anotherMember?.name"
-        :aria-label="anotherMember?.name"
-      />
-      <p class="flex-1 truncate">
-        {{ chatName }}
-      </p>
-      <div
-        v-if="isButtonShow"
-        class="flex h-[16px] w-[16px] shrink-0 items-center"
-      >
-        <IconsClose />
-      </div>
-    </AtomsCard>
-  </NuxtLink>
+      <AtomsCard class="flex-1">
+        <AtomsAvatarInitials
+          :avatar="anotherMember?.avatar"
+          :name="anotherMember?.name"
+          :aria-label="anotherMember?.name"
+        />
+        <p class="flex-1 truncate">
+          {{ chatName }}
+        </p>
+      </AtomsCard>
+    </NuxtLink>
+
+    <button
+      type="button"
+      class="invisible absolute top-1/2 right-5 flex h-4 w-4 shrink-0 -translate-y-1/2 items-center group-focus-within:visible group-hover:visible"
+      @click="($event) => $event.stopPropagation()"
+    >
+      <IconsClose class="fill-gray-400 hover:fill-gray-200" />
+    </button>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -33,7 +36,6 @@ interface Props {
 }
 
 const props = defineProps<Props>()
-const isButtonShow = ref(false)
 
 const anotherMember = props.chat.members.find(
   (member) => member.id !== currentUserId,
@@ -44,9 +46,3 @@ const chatName =
     ? props.chat.members.map(({ name }) => name).join(', ')
     : anotherMember?.name
 </script>
-
-<style scoped style="scss">
-.router-link-exact-active > div {
-  @apply bg-gray-700 text-gray-200;
-}
-</style>

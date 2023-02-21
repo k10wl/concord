@@ -1,19 +1,13 @@
 <template>
   <MoleculesChanelNavigationBase
     :to="`/chanels/${chanel.id}`"
-    :selected="chanelRegexp.test($route.fullPath)"
+    :area-label="chanel.name"
     class="relative"
   >
-    <div
-      class="absolute inset-x-0 m-auto flex h-full w-full items-center justify-center"
-    >
+    <div class="absolute inset-0 grid place-items-center">
       {{ initials }}
     </div>
-    <AtomsAvatar
-      :src="chanel.img"
-      :aria-label="chanel.name"
-      class="scale-105"
-    />
+    <AtomsAvatar :src="chanel.img" class="scale-105" />
   </MoleculesChanelNavigationBase>
 </template>
 
@@ -28,6 +22,4 @@ const props = withDefaults(defineProps<Props>(), {})
 
 const nameFirstLetters = props.chanel.name.match(/(^.|\s.)/gi)
 const initials = nameFirstLetters?.join('').replace(/\s/gi, '') || ''
-
-const chanelRegexp = new RegExp(`^/chanels/${props.chanel.id}`, 'gi')
 </script>

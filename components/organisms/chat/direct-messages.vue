@@ -8,7 +8,7 @@
         <IconsAdd />
       </button>
     </div>
-    <ul>
+    <ul class="grid gap-1">
       <li v-for="chat in CHAT_MOCK" :key="chat.id">
         <MoleculesChatPreview :chat="chat" />
       </li>

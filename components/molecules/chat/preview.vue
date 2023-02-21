@@ -1,9 +1,8 @@
 <template>
-  <div
-    class="relative overflow-hidden rounded hover:bg-gray-600 hover:text-gray-200"
-  >
+  <div class="group relative rounded hover:bg-gray-600 hover:text-gray-200">
     <NuxtLink
       :to="`/chanels/${chat.chanelId}/${chat.id}`"
+      class="rounded"
       active-class="bg-gray-700 flex"
     >
       <AtomsCard class="flex-1">
@@ -20,7 +19,7 @@
 
     <button
       type="button"
-      class="absolute top-1/2 right-5 flex h-4 w-4 shrink-0 -translate-y-1/2 items-center"
+      class="invisible absolute top-1/2 right-5 flex h-4 w-4 shrink-0 -translate-y-1/2 items-center group-focus-within:visible group-hover:visible"
       @click="($event) => $event.stopPropagation()"
     >
       <IconsClose class="fill-gray-400 hover:fill-gray-200" />

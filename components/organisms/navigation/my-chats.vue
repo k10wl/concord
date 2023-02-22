@@ -9,7 +9,7 @@
     <div aria-hidden="true" class="my-5 -mx-3 border-b border-gray-900" />
 
     <div class="mb-3">
-      <NuxtLink to="/chanels/me">
+      <NuxtLink to="/channels/me">
         <AtomsCard>
           <IconsFriend />
           Friends

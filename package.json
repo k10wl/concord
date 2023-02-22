@@ -6,9 +6,11 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint --fix ."
+    "lint": "eslint --fix .",
+    "generate-mocks": "node MOCKS/generateMocks.mjs && npm run lint"
   },
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@nuxtjs/eslint-config-typescript": "^12.0.0",
     "@typescript-eslint/eslint-plugin": "^5.52.0",
     "@typescript-eslint/parser": "^5.52.0",
@@ -31,7 +33,13 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@apollo/server": "^4.4.0",
+    "@as-integrations/h3": "^1.1.5",
+    "@nuxtjs/apollo": "^5.0.0-alpha.5",
     "@rushstack/eslint-patch": "^1.2.0",
-    "@vue/eslint-config-airbnb": "^7.0.0"
+    "@vue/eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-sort-exports": "^0.8.0",
+    "graphql": "^16.6.0",
+    "nuxt-graphql-server": "^1.1.5"
   }
 }

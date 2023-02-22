@@ -1,9 +1,9 @@
 <template>
-  <MoleculesChanelNavigationBase
-    to="/chanels/me"
+  <MoleculesChannelNavigationBase
+    to="/channels/me"
     title="private messages"
     aria-label="private messages"
   >
     <AtomsLogoAsAvatar />
-  </MoleculesChanelNavigationBase>
+  </MoleculesChannelNavigationBase>
 </template>

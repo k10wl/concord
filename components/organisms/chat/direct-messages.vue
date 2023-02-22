@@ -8,8 +8,8 @@
         <IconsAdd />
       </button>
     </div>
-    <ul class="grid gap-1">
-      <li v-for="chat in CHAT_MOCK" :key="chat.id">
+    <ul v-if="result" class="grid gap-1">
+      <li v-for="chat in result.chats" :key="chat.id">
         <MoleculesChatPreview :chat="chat" />
       </li>
     </ul>
@@ -17,5 +17,10 @@
 </template>
 
 <script setup lang="ts">
-import { CHAT_MOCK } from '~~/constants'
+import { queryChatsPreview } from '~/api'
+import { CHATS_MOCK } from '~/MOCKS'
+
+const { result } = useQuery(queryChatsPreview, {
+  ids: CHATS_MOCK.map((mock) => mock.id),
+})
 </script>

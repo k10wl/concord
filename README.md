@@ -7,8 +7,6 @@ Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introdu
 Make sure to install the dependencies:
 
 ```bash
-
-# npm
 npm install
 ```
 
@@ -18,6 +16,34 @@ Start the development server on http://localhost:3000
 
 ```bash
 npm run dev
+```
+
+## Docker 🐳
+
+Compose both containers
+```bash
+docker compose up
+```
+
+Start both containers and log server output
+```bash
+docker compose start
+docker compose logs -f concord
+```
+
+Stop all containers
+```bash
+docker compose stop
+```
+
+Execute commands in running containers
+```
+docker exec <container name> <command>
+```
+
+Enter bash
+```
+docker exec -it <container name> bash
 ```
 
 ## Production

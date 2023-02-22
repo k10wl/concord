@@ -7,7 +7,7 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint --fix .",
-    "generate-mocks": "node MOCKS/generateMocks.mjs"
+    "generate-mocks": "node MOCKS/generateMocks.mjs && npm run lint"
   },
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",

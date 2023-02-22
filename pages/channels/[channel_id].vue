@@ -1,7 +1,7 @@
 <template>
   <NuxtLayout name="channel">
     <template #channel>
-      <div>chanels/{{ $route.params.chanel_id }}</div>
+      <div>channels/{{ $route.params.channel_id }}</div>
     </template>
     <template #chat>
       <NuxtPage />

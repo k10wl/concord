@@ -8,4 +8,11 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
+  modules: ['nuxt-graphql-server', '@nuxtjs/apollo'],
+  graphqlServer: {
+    schema: './server/**/*.graphql',
+  },
+  apollo: {
+    clients: { default: { httpEndpoint: '/api/graphql' } },
+  },
 })

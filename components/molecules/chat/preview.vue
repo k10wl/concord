@@ -28,8 +28,8 @@
 </template>
 
 <script setup lang="ts">
-import { Chat } from '~~/types'
-import { currentUserId } from '~~/constants'
+import { currentUserId } from '~/MOCKS'
+import { Chat } from '#graphql/resolver'
 
 interface Props {
   chat: Chat
@@ -37,12 +37,12 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const anotherMember = props.chat.members.find(
-  (member) => member.id !== currentUserId,
+const anotherMember = props.chat.users.find(
+  (user) => user?.id !== currentUserId,
 )
 
 const chatName =
-  props.chat.members?.length > 2
-    ? props.chat.members.map(({ name }) => name).join(', ')
+  props.chat.users?.length > 2
+    ? props.chat.users.map((user) => user?.name).join(', ')
     : anotherMember?.name
 </script>

@@ -1,0 +1,29 @@
+type User {
+    id: String!
+    name: String!
+    color: String!
+    avatar: String
+}
+
+type Channel {
+    id: String!
+    name: String!
+    avatar: String
+    color: String
+}
+
+type Chat {
+    id: String!
+    users: [User]!
+    channelId: String!
+}
+
+type Query {
+    users(ids: [ID]!): [User]
+    channels(ids: [ID]!): [Channel]
+    chats(ids: [ID]!): [Chat]
+
+    channel(id: ID!): Channel
+    user(id: ID!): User
+    chat(id: ID!): Chat
+}

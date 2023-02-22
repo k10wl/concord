@@ -20,7 +20,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['vue', 'tailwindcss'],
+  plugins: ['vue', 'tailwindcss', 'sort-exports'],
   rules: {
     'prettier/prettier': [
       'error',
@@ -29,15 +29,8 @@ module.exports = {
       },
     ],
     'vue/multi-word-component-names': 'off',
-    'import/extensions': [
-      'error',
-      'ignorePackages',
-      {
-        js: 'never',
-        jsx: 'never',
-        ts: 'never',
-        tsx: 'never',
-      },
-    ],
+    'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
+    'sort-exports/sort-exports': ['error', { sortDir: 'asc' }],
   },
 }

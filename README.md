@@ -19,6 +19,32 @@ npm run dev
 ```
 
 ## Docker 🐳
+### Pre-requirements ⚙️
+Before running the project, ensure that you have completed the following steps:
+
+1. Create a file named `.env.docker` in the root directory of the project;
+2. Copy the contents from `.env.docker.example` into the `.env.docker` file;
+3. Update the values in the .env.docker file with the required data.
+```bash
+# Execute steps 1 and 2 in single command
+cp .env.docker.example .env.docker
+```
+
+The `.env.docker` file is used to store environment variables that are
+required for the Docker container to run.
+By copying the example file and updating the values,
+you can ensure that the application will have the necessary configuration
+to run properly.
+
+Available containers
+
+| Name         | Description                |
+|--------------|----------------------------|
+| `concord`    | nuxt app composed to image |
+| `concord-db` | postgres database          |
+
+
+### Cheatsheet
 
 Compose both containers
 ```bash
@@ -36,14 +62,19 @@ Stop all containers
 docker compose stop
 ```
 
+Start single container
+```
+docker compose start <container-name>
+```
+
 Execute commands in running containers
 ```
-docker exec <container name> <command>
+docker exec <container-name> <command>
 ```
 
 Enter bash
 ```
-docker exec -it <container name> bash
+docker exec -it <container-name> bash
 ```
 
 ## Production

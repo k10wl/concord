@@ -19,6 +19,5 @@ services:
     container_name: concord-db
     ports:
       - 5433:5433
-    environment:
-      POSTGRES_USER: concord-db
-      POSTGRES_PASSWORD: root
+    env_file:
+      - .env.docker

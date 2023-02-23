@@ -44,7 +44,7 @@ Available containers
 | `concord-db` | postgres database          |
 
 
-### Cheatsheet
+### Cheatsheet 📝
 
 Compose both containers
 ```bash

@@ -4,6 +4,7 @@ services:
     image: node:19.6.0-alpine
     container_name: concord
     ports:
+      - "24678:24678"
       - "3000:3000"
     working_dir: '/concord'
     tty: true
@@ -18,6 +19,6 @@ services:
     image: postgres:13.4-alpine
     container_name: concord-db
     ports:
-      - 5433:5433
+      - 5432:5432
     env_file:
       - .env.docker

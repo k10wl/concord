@@ -7,6 +7,8 @@ WORKDIR /concord
 
 COPY ./ /concord
 
+COPY prisma ./prisma/
+
 RUN npm install
 RUN npm run build
 

@@ -19,7 +19,7 @@ type Chat {
 }
 
 type Query {
-    users(ids: [ID]!): [User]
+    users: [User]
     channels(ids: [ID]!): [Channel]
     chats(ids: [ID]!): [Chat]
 

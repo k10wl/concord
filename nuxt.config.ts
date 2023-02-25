@@ -13,6 +13,10 @@ export default defineNuxtConfig({
     schema: './server/**/*.graphql',
   },
   apollo: {
-    clients: { default: { httpEndpoint: '/api/graphql' } },
+    clients: {
+      default: {
+        httpEndpoint: '/api/graphql',
+      },
+    },
   },
 })
